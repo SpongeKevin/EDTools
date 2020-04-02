@@ -1,5 +1,5 @@
 ## EDTools
-[Encryption & Decryption Tools](sponge-edtools.netlify.com)
+[Encryption & Decryption Tools](https://sponge-edtools.netlify.com)
 
 由於有使用各種加密算法的需求，而最近也在研究微軟的 Blazor、.NET Core 3.1，因此使用了這些技術實現了一個線上的加解密工具，使用的 Blazor 為 client side only 的版本，可發行為靜態頁面並且於 GitPage、FireBase 等地部屬，同時他僅使用 webassembly 在瀏覽器上執行，不會也不需要使用後端伺服器，讓你在加解密重要資訊時更加安心
 
