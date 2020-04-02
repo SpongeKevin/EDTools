@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EDTools.Helper
 {
-    public class AesHellper
+    public class AesHelper
     {
         public static string Encrypt(string data, string key, int mode, int padding, string iv = null)
         {
