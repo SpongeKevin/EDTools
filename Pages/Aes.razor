@@ -56,12 +56,12 @@
 
     private void Encrypt()
     {
-        result = AesHellper.Encrypt(data, key, mode, padding, iv);
+        result = AesHelper.Encrypt(data, key, mode, padding, iv);
     }
 
     private void Decrypt()
     {
-        result = AesHellper.Decrypt(data, key, mode, padding, iv);
+        result = AesHelper.Decrypt(data, key, mode, padding, iv);
     }
 
     private void Clear()
