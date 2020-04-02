@@ -1,4 +1,4 @@
-name: BlazorOnNetlify #your workflow name
+name: EDTools #your workflow name
 on: [push] #on push to your branch run this workflow
 
 jobs:
@@ -21,5 +21,5 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
       with:
-          args: deploy --dir=BlazorOnNetlify/dist --prod #push dist folder to Netlify
+          args: deploy --dir=EDTools/dist --prod #push dist folder to Netlify
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]' 
