@@ -10,6 +10,27 @@
 
 提供各種加密算法的線上加解密工具
 
+### 目錄結構
+
+```
+EDTools
+│
+├─EDTools 網站方案
+│  ├─Helper 加解密核心
+│  ├─Pages 顯示頁面
+│  ├─Shared 共用頁面布局
+│  └─wwwroot 靜態資源，如 bootstrap 
+│
+└─EDToolsTest 測試方案
+    └─AesTest.cs Aes 加解密測試      
+```
+
+提供各種加密算法的線上加解密工具
+
+### 單元測試
+
+透過 EDToolsTest 這個單元測試專案進行，通過測試才會發佈
+
 ### 技術選擇
 
 - [C#](https://docs.microsoft.com/zh-tw/dotnet/csharp/)
@@ -17,7 +38,7 @@
 - [Blazor Client Side](https://docs.microsoft.com/zh-tw/aspnet/core/blazor/hosting-models?view=aspnetcore-3.1)
 
 ## 未來計畫
-- [ ] 單元測試
+- [x] 單元測試
 - [ ] DES
 - [ ] RSA
 - [ ] RC2

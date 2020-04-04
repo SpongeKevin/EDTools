@@ -11,12 +11,12 @@
     <select class="form-control" @bind="mode" style="width:170px">
         <option value=1>CBC</option>
         <option value=2>ECB</option>
-        <option value=3>OFB</option>
+        @*<option value=3>OFB</option>
         <option value=4>CFB</option>
-        <option value=5>CTS</option>
+        <option value=5>CTS</option>*@
     </select>
     <select class="form-control" @bind="padding" style="width:170px">
-        <option value=1>None</option>
+        @*<option value=1>None</option> 目前此填充方法無法通過測試，暫時不提供*@
         <option value=2>PKCS7</option>
         <option value=3>Zeros</option>
         <option value=4>ANSIX923</option>
