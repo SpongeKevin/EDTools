@@ -1,0 +1,72 @@
+﻿@page "/des"
+@using EDTools.Helper;
+
+<h3>DES</h3>
+
+<div class="alert alert-success">
+    除了 ECB 模式外都需要輸入向量，金鑰與向量可以輸入長度皆為 8 個位元
+</div>
+
+<form class="form-inline">
+    <select class="form-control" @bind="mode" style="width:170px">
+        <option value=1>CBC</option>
+        <option value=2>ECB</option>
+        @*<option value=3>OFB</option>
+        <option value=4>CFB</option>
+        <option value=5>CTS</option>*@
+    </select>
+    <select class="form-control" @bind="padding" style="width:170px">
+        @*<option value=1>None</option> 目前此填充方法無法通過測試，暫時不提供*@
+        <option value=2>PKCS7</option>
+        <option value=3>Zeros</option>
+        <option value=4>ANSIX923</option>
+        <option value=5>ISO10126</option>
+    </select>
+    <div class="form-group">
+        <input class="form-control" placeholder="金鑰" @bind="key">
+    </div>
+    <div class="form-group">
+        <input class="form-control" placeholder="向量" @bind="iv">
+    </div>
+</form>
+
+<div class="form-group">
+    <textarea class="form-control" rows="5" @bind="data"></textarea>
+</div>
+
+<button type="button" class="btn btn-primary" @onclick="Encrypt">加密</button>
+<button type="button" class="btn btn-primary" @onclick="Decrypt">解密</button>
+<button type="button" class="btn btn-danger" @onclick="Clear">重置</button>
+<br>
+<br>
+
+<div class="form-group">
+    <textarea class="form-control" rows="5" @bind="result"></textarea>
+</div>
+
+@code {
+    private string data;
+    private string key;
+    private int mode = 1;
+    private int padding = 2;
+    private string iv;
+
+    private string result;
+
+    private void Encrypt()
+    {
+        result = DesHelper.Encrypt(data, key, mode, padding, iv);
+    }
+
+    private void Decrypt()
+    {
+        result = DesHelper.Decrypt(data, key, mode, padding, iv);
+    }
+
+    private void Clear()
+    {
+        data = key = iv = result = "";
+        mode = 1;
+        padding = 2;
+    }
+}

@@ -14,7 +14,7 @@ namespace EDTools.Helper
             aes.Key = Encoding.UTF8.GetBytes(key);
             aes.Mode = (CipherMode)mode;
             aes.Padding = (PaddingMode)padding;
-            if (!string.IsNullOrEmpty(iv))
+            if ((aes.Mode != CipherMode.ECB) && !string.IsNullOrEmpty(iv))
                 aes.IV = Encoding.UTF8.GetBytes(iv);
 
             ICryptoTransform transform = aes.CreateEncryptor();
@@ -29,7 +29,7 @@ namespace EDTools.Helper
             aes.Key = Encoding.UTF8.GetBytes(key);
             aes.Mode = (CipherMode)mode;
             aes.Padding = (PaddingMode)padding;
-            if (!string.IsNullOrEmpty(iv))
+            if ((aes.Mode != CipherMode.ECB) && !string.IsNullOrEmpty(iv))
                 aes.IV = Encoding.UTF8.GetBytes(iv);
 
             ICryptoTransform transform = aes.CreateDecryptor();
